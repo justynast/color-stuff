@@ -23,15 +23,11 @@ class Application(Frame):
         self.cb = Button(self, height=1, width=20)
         self.cb.grid(row=0, column=1, sticky=W)
 
-    def change_color(self):
-        """ changes color of the button """
-        self.cb.configure(bg=self.color_name)
-
     def choose_color(self):
-        """ asks for a color"""
+        """ asks for a color and changes color of the button"""
         self.color = askcolor()
         self.color_name = self.color[1]
-        self.change_color()
+        self.cb.configure(bg=self.color_name)
         self.update_txt()
 
     def update_txt(self):
