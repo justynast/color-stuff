@@ -2,6 +2,7 @@
 
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
+import json
 
 # specify the urls
 quote_page = ['https://en.wikipedia.org/wiki/List_of_colors:_A%E2%80%93F',
@@ -48,4 +49,6 @@ for pages in quote_page:
     color_dict = dict(zip(hex_names, color_names)) # make a dictionary with hex codes as keys and names as values
     result.update(color_dict) # merge with result dict
 
-print(result)
+# save dictionary to json file
+with open('color_dict.json', 'w') as f:
+    json.dump(result, f)
