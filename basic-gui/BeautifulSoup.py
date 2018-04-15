@@ -44,4 +44,7 @@ for hex in hex_cells: #extracs just hex codes and appends to a new list
     hex_code = hex.text
     hex_names.append(hex_code)
 
-print(hex_names)
+
+color_dict = dict(zip(hex_names, color_names)) # make a dictionary with hex code as keys and names as values
+
+print(color_dict)
