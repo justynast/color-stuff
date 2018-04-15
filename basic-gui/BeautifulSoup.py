@@ -30,4 +30,18 @@ for color in color_links: # extract just names of the colors and append to a lis
     color_name = color.text
     color_names.append(color_name)
 
-print(color_names)
+all_td = table.findAll('td')
+
+hex_cells = [] # table storig whole contet of td containing hex code
+
+for i in range(0, len(all_td)): # every ninth td stores hex code
+    if i % 9 == 0:
+        hex_cells.append(all_td[i])
+
+hex_names = []
+
+for hex in hex_cells: #extracs just hex codes and appends to a new list
+    hex_code = hex.text
+    hex_names.append(hex_code)
+
+print(hex_names)
