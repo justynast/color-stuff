@@ -2,6 +2,11 @@
 
 from tkinter import *
 from tkinter.colorchooser import *
+import json
+
+# load color dictionary
+with open('color_dict.json') as f:
+    color_dict = json.load(f)
 
 class Application(Frame):
     def __init__(self, master):
