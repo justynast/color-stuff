@@ -37,12 +37,14 @@ class Application(Frame):
         self.update_txt()
 
     def get_name(self):
+        """ gets the name of chose color out of dictionary """
         if self.color_hex in color_dict:
             self.color_name = color_dict[self.color_hex]
         else:
             self.color_name = 'unknown'
 
     def update_txt(self):
+        """ updates text output """
         color_result_hex = self.color_hex
         rgb_tuple = self.color[0] #gets a tuple of RGB coordinates
         color_result_rgb = ' '.join(format(x, "1.0f") for x in rgb_tuple) #transforms tuple into a string
