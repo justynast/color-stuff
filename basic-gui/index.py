@@ -47,7 +47,7 @@ class Application(Frame):
         """ updates text output """
         color_result_hex = self.color_hex
         rgb_tuple = self.color[0] #gets a tuple of RGB coordinates
-        color_result_rgb = ' '.join(format(x, "1.0f") for x in rgb_tuple) #transforms tuple into a string
+        color_result_rgb = ' '.join(str(int(x)) for x in rgb_tuple) #transforms tuple into a string
         message = "HEX code: "
         message += color_result_hex
         message += "\nRGB code: "
